@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI","Roboto","Oxygen","Helvetica Neue",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.App {
+  text-align: center;
+}
+h1 {
+  margin: 50px;
+}
+div {
+  display: block;
+}
+div.card {
+  display: inline-block;
+  width: 400px;
+  border: 2px solid #000;
+  margin: 40px 0 30px;
+  text-align: left;
+  padding: 5px 30px;
+  line-height: 1.5rem;
+  transition: all 0.3s linear;
+}
+div.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: scale(1.05);
+}
+div.close {
+  margin-top: 10px;
+  text-align: right;
+}
+h4 {
+  font-size: 2rem;
+  margin: 0;
+}
+h6 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.card p:first-of-type {
+  margin-top: 3px;
+  margin-bottom: 30px;
+}
