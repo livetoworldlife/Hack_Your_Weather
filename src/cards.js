@@ -24,8 +24,8 @@ export default function GetCityData() {
           </h4>
           <h6>{main}</h6>
           <p>{description}</p>
-          <p>min temp: {temp_min}</p>
-          <p>max temp: {temp_max}</p>
+          <p>min temp: {(temp_min - 273.15).toFixed(1)}</p>
+          <p>max temp: {(temp_max - 273.15).toFixed(1)}</p>
           <p>location: {lat}, {lon}</p>
         </div>
       </div>
