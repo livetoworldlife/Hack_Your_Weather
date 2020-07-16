@@ -1,17 +1,8 @@
 import React from 'react';
-import CityWeather from './city-weather.json';
 
-
-
-export default function GetCityData() {
-  const newData = CityWeather.map(data => {
-    const {
-      id,
-      name,
-      sys: { country },
-      weather: [{ main, description }],
-      main: { temp_min, temp_max },
-      coord: { lat, lon } } = data;
+export default function GetCityData({ dataState }) {
+  const newData = dataState.map(data => {
+    const { id, name, country, main, description, temp_min, temp_max, lat, lon } = data;
 
     return (
       <div key={id}>
