@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import { useInput } from './inputhook';
-import CityData from './cards';
+import React, { useState, useEffect } from "react";
+import { useInput } from './InputCustomHook';
+import CityData from './WeatherCards';
+import Loader from 'react-loader-spinner';
 
-export default function NameForm() {
+export default function WeatherForm({ list }) {
   const { value, bind, reset } = useInput('');
   const [dataState, setDataState] = useState([])
   const [isError, setError] = useState(false);
   const [descError, setDescError] = useState('');
   const [isLoading, setLoading] = useState(false);
 
+  console.log(list);
   const fetchCity = async (cityName) => {
     try {
       setLoading(true);
@@ -40,18 +42,27 @@ export default function NameForm() {
     fetchCity(value);
     reset();
   }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
         <input type="text" {...bind} placeholder="Search City..." />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" disabled={value.length < 1} />
       </form>
       <div>
         {(dataState.length === 0) && <p style={{ color: "green" }}>There are no cities searched for yet!</p>}
-        {isLoading && <p style={{ color: "blue" }}>Loading...</p>}
+        {isLoading && <Loader type="ThreeDots" color="blue" height="100" width="40" />}
         {isError && <p style={{ color: "red" }}>Alert! {descError}.</p>}
       </div>
       <CityData dataState={dataState} />
     </>
   );
 }
+
+/**
+Any time a user searches for a new city, add it to a list of already searched cities
+Hints:
+
+Think about what data structure makes most sense to use
+Make use of filter() when removing cities
+ */

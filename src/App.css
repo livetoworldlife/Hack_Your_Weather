@@ -10,12 +10,14 @@ body {
 h1 {
   margin: 50px;
 }
-div {
-  display: block;
+
+.city-cards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 div.card {
-  display: inline-block;
-  width: 400px;
+  width: 40%;
   border: 2px solid #000;
   margin: 40px 0 30px;
   text-align: left;
@@ -43,4 +45,34 @@ h6 {
 .card p:first-of-type {
   margin-top: 3px;
   margin-bottom: 30px;
+}
+form input[type="text"]{
+  font-size: 1.2rem;
+  width: 40%;
+  height: 50px;
+}
+form button{
+  margin-left: 5px;
+  height: 55px;
+}
+.close button{
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px solid black;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+@media screen and (max-width:600px){
+
+  div.card {
+    width: 70%;
+  }
+  form input[type="text"]{
+    width: 70%;
+    height: 50px;
+  }
+  form button{
+    margin-left: 0;
+    height: 55px;
+  }
 }
